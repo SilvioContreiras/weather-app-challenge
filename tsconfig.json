@@ -19,6 +19,6 @@
       "@hooks/*": ["hooks/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["./dist"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "setupTests.ts"],
+  "exclude": ["node_modules", "dist"]
 }

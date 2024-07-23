@@ -15,3 +15,9 @@ npm install
 npm run dev
 ```
 
+# Run the tests
+
+```bash
+npm run test
+```
+
