@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+/*import { useQuery } from "react-query";
 import { getWeatherForecast } from "@services/weatherService";
 import { Coordinates } from "@domain/models/Address";
 import { WeatherForecast } from "@domain/models/Weather";
@@ -21,4 +21,22 @@ const useWeatherForecast = (coordinates: Coordinates | null) => {
   );
 };
 
+export default useWeatherForecast;*/
+
+import { useQuery } from 'react-query';
+import { getWeatherForecast } from '@services/weatherService';
+import { Coordinates } from '@domain/models/Address';
+import { WeatherForecast } from '@domain/models/Weather';
+
+const useWeatherForecast = (coordinates: Coordinates | null) => {
+  return useQuery<WeatherForecast[], Error>(
+    ['weatherForecast', coordinates],
+    () => getWeatherForecast(coordinates!.y, coordinates!.x),
+    {
+      enabled: !!coordinates,
+    }
+  );
+};
+
 export default useWeatherForecast;
+
